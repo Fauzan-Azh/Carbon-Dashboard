@@ -18,12 +18,31 @@ export default function Home() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Form berhasil dikirim!');
-  };
 
+    try {
+      const res = await fetch('/backend/proyek', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`);
+      }
+
+      const result = await res.json();
+      console.log('Response:', result);
+      alert('Data berhasil dikirim ke backend!');
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Gagal mengirim data!');
+    }
+  };
+  
   return (
     <div className="min-h-screen bg-white flex flex-col items-center justify-center p-4">
       <div className="text-center space-y-8 w-full max-w-4xl">

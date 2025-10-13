@@ -18,15 +18,15 @@ export default function ElectricityBillsPage() {
         <div className="flex justify-center items-center mb-4">
           {/* Left side buttons */}
           <div className="flex" style={{gap: '17px'}}>
-            <button className="text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200" style={{backgroundColor: '#172813', fontSize: '20px'}} onMouseEnter={(e) => e.target.style.backgroundColor = '#1a2f15'} onMouseLeave={(e) => e.target.style.backgroundColor = '#172813'}>
+            <button className="text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200" style={{backgroundColor: '#172813', fontSize: '20px'}} onMouseEnter={(e: React.MouseEvent<HTMLButtonElement>) => { e.currentTarget.style.backgroundColor = '#1a2f15'; }} onMouseLeave={(e: React.MouseEvent<HTMLButtonElement>) => { e.currentTarget.style.backgroundColor = '#172813'; }}>
               Export Data
             </button>
             <Link
               href="/electricity-bills/import"
               className="text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
               style={{backgroundColor: '#172813', fontSize: '20px'}}
-              onMouseEnter={(e) => e.target.style.backgroundColor = '#1a2f15'}
-              onMouseLeave={(e) => e.target.style.backgroundColor = '#172813'}
+              onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#1a2f15'; }}
+              onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#172813'; }}
             >
               Import Data
             </Link>
@@ -41,8 +41,8 @@ export default function ElectricityBillsPage() {
               href="/electricity-bills/input"
               className="inline-flex items-center space-x-2 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
               style={{backgroundColor: '#5EA127', fontSize: '20px'}}
-              onMouseEnter={(e) => e.target.style.backgroundColor = '#6bb52d'}
-              onMouseLeave={(e) => e.target.style.backgroundColor = '#5EA127'}
+              onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#6bb52d'; }}
+              onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => { e.currentTarget.style.backgroundColor = '#5EA127'; }}
             >
               <span>Tambah Data</span>
               <svg

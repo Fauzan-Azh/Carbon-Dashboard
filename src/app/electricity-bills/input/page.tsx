@@ -228,8 +228,8 @@ export default function ElectricityBillsInputPage() {
                           color: 'black',
                           fontSize: '16px'
                         }}
-                        onMouseEnter={(e) => e.target.style.backgroundColor = '#D0E7BD'}
-                        onMouseLeave={(e) => e.target.style.backgroundColor = 'white'}
+                        onMouseEnter={(e: React.MouseEvent<HTMLDivElement>) => { e.currentTarget.style.backgroundColor = '#D0E7BD'; }}
+                        onMouseLeave={(e: React.MouseEvent<HTMLDivElement>) => { e.currentTarget.style.backgroundColor = 'white'; }}
                         onClick={() => handleSelectOption('namaPanel', option)}
                       >
                         {option}
@@ -374,8 +374,8 @@ export default function ElectricityBillsInputPage() {
                           color: 'black',
                           fontSize: '16px'
                         }}
-                        onMouseEnter={(e) => e.target.style.backgroundColor = '#D0E7BD'}
-                        onMouseLeave={(e) => e.target.style.backgroundColor = 'white'}
+                        onMouseEnter={(e: React.MouseEvent<HTMLDivElement>) => { e.currentTarget.style.backgroundColor = '#D0E7BD'; }}
+                        onMouseLeave={(e: React.MouseEvent<HTMLDivElement>) => { e.currentTarget.style.backgroundColor = 'white'; }}
                         onClick={() => handleSelectOption('statusPembayaran', option)}
                       >
                         {option}
@@ -397,8 +397,8 @@ export default function ElectricityBillsInputPage() {
                   height: '45px',
                   fontSize: '20px'
                 }}
-                onMouseEnter={(e) => e.target.style.backgroundColor = '#1a2f15'}
-                onMouseLeave={(e) => e.target.style.backgroundColor = '#172813'}
+                onMouseEnter={(e: React.MouseEvent<HTMLButtonElement>) => { e.currentTarget.style.backgroundColor = '#1a2f15'; }}
+                onMouseLeave={(e: React.MouseEvent<HTMLButtonElement>) => { e.currentTarget.style.backgroundColor = '#172813'; }}
               >
                 Simpan Data
               </button>

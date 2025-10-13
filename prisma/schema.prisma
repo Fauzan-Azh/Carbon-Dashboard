@@ -7,11 +7,16 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model Proyek {
-  id            Int      @id @default(autoincrement())
-  namaProyek    String
-  deskripsi     String
-  jenisPengguna String
-  durasi        String
-  createdAt     DateTime @default(now())
+model ElectricityBill {
+  id               Int       @id @default(autoincrement())
+  panelName        String
+  month            String
+  kWhAmount        Int
+  electricityCost  Float
+  paymentStatus    String
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  @@index([month])
 }
+

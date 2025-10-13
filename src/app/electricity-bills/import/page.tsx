@@ -96,8 +96,8 @@ export default function ImportDataPage() {
                 width: '251px',
                 height: '45px'
               }}
-              onMouseEnter={(e) => e.target.style.backgroundColor = '#6bb52d'}
-              onMouseLeave={(e) => e.target.style.backgroundColor = '#5EA127'}
+              onMouseEnter={(e: React.MouseEvent<HTMLButtonElement>) => { e.currentTarget.style.backgroundColor = '#6bb52d'; }}
+              onMouseLeave={(e: React.MouseEvent<HTMLButtonElement>) => { e.currentTarget.style.backgroundColor = '#5EA127'; }}
             >
               <span>Unduh Template</span>
               <svg

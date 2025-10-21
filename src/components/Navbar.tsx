@@ -65,7 +65,7 @@ export default function Navbar() {
                     d="M7 12v6M11 9v9M15 6v12M19 3v15"
                   />
                 </svg>
-                <span className="font-medium">Home</span>
+                <span className="font-medium">Dashboard</span>
               </Link>
 
             <Link
@@ -109,7 +109,7 @@ export default function Navbar() {
                     d="M3 5h12M3 9h9M3 13h6"
                   />
                 </svg>
-                <span className="font-medium">Electricity Bills</span>
+                <span className="font-medium">Tagihan Listrik</span>
               </Link>
 
             <Link
@@ -153,7 +153,7 @@ export default function Navbar() {
                     d="M6 12v5c3 3 9 3 12 0v-5"
                   />
                 </svg>
-                <span className="font-medium">Student Housing</span>
+                <span className="font-medium">Asrama Beasiswa</span>
               </Link>
             </div>
           </div>

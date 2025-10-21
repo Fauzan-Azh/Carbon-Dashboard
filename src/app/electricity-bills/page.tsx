@@ -11,7 +11,7 @@ export default function ElectricityBillsPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Page Title */}
         <h1 className="text-[48pt] font-bold text-black text-center mb-8">
-          Electricity Bills Data
+          Data Tagihan Listrik
         </h1>
 
         {/* Action Buttons */}

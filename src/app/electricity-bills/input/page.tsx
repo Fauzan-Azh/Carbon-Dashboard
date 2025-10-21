@@ -9,20 +9,16 @@ export default function ElectricityBillsInputPage() {
     namaPanel: '',
     bulan: '',
     jumlahKwh: '',
-    tagihanListrik: '',
-    statusPembayaran: ''
+    tagihanListrik: ''
   });
 
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [showErrorModal, setShowErrorModal] = useState(false);
   const [showNamaPanelDropdown, setShowNamaPanelDropdown] = useState(false);
-  const [showStatusDropdown, setShowStatusDropdown] = useState(false);
 
   const namaPanelOptions = [
     'GL 01', 'GL 02', 'GOR 01', 'GOR 02', 'GOR 03', 'GOR 04', 'GOR 05', 'GOR 06', 'GOR 07', 'GOR 08', 'GOR 09', 'GOR 10', 'GOR 11', 'GOR 12', 'GOR 13', 'GOR 14', 'GOR 15', 'GOR 16', 'GOR 17', 'GOR 18', 'GOR 19', 'GOR 20', 'GOR 21', 'GOR 22', 'GOR 23', 'GOR 24', 'GOR 25', 'GOR 26', 'GOR 27', 'GOR 28', 'GOR 29', 'GOR 30'
   ];
-
-  const statusOptions = ['Lunas', 'Belum Lunas'];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -36,7 +32,7 @@ export default function ElectricityBillsInputPage() {
     e.preventDefault();
     
     // Validasi semua field harus diisi
-    const isAllFieldsFilled = formData.namaPanel && formData.bulan && formData.jumlahKwh && formData.tagihanListrik && formData.statusPembayaran;
+    const isAllFieldsFilled = formData.namaPanel && formData.bulan && formData.jumlahKwh && formData.tagihanListrik;
     
     // Validasi input harus berupa angka untuk kWh dan Tagihan
     const isJumlahKwhValid = /^\d+$/.test(formData.jumlahKwh);
@@ -69,7 +65,6 @@ export default function ElectricityBillsInputPage() {
       [field]: value
     }));
     setShowNamaPanelDropdown(false);
-    setShowStatusDropdown(false);
   };
 
   return (
@@ -171,7 +166,7 @@ export default function ElectricityBillsInputPage() {
 
         {/* Page Title */}
         <h1 className="font-bold text-black text-center mb-12" style={{fontSize: '48px'}}>
-          Ellectricity Bills Input
+          Masukkan Data Tagihan
         </h1>
 
         {/* Form */}
@@ -323,68 +318,6 @@ export default function ElectricityBillsInputPage() {
               </div>
             </div>
 
-            {/* Status Pembayaran */}
-            <div className="flex items-center gap-4 justify-center">
-              <label className="font-medium text-gray-900 flex-shrink-0" style={{fontSize: '20px', width: '200px'}}>
-                Status Pembayaran :
-              </label>
-              <div className="relative flex-1">
-                <div
-                  className="border rounded-lg bg-white cursor-pointer"
-                  style={{
-                    width: '648px',
-                    height: '45px',
-                    borderColor: '#646F61',
-                    color: formData.statusPembayaran ? 'black' : '#9ca3af',
-                    fontSize: '16px',
-                    padding: '0 16px',
-                    display: 'flex',
-                    alignItems: 'center'
-                  }}
-                  onClick={() => setShowStatusDropdown(!showStatusDropdown)}
-                >
-                  {formData.statusPembayaran || 'Lunas / Belum Lunas'}
-                </div>
-                <svg
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-                
-                {/* Custom Dropdown */}
-                {showStatusDropdown && (
-                  <div 
-                    className="absolute top-full left-0 right-0 bg-white border border-gray-300 rounded-lg shadow-lg z-10"
-                    style={{ borderColor: '#646F61' }}
-                  >
-                    {statusOptions.map((option, index) => (
-                      <div
-                        key={index}
-                        className="px-4 py-3 cursor-pointer hover:bg-gray-100 transition-colors"
-                        style={{
-                          backgroundColor: 'white',
-                          color: 'black',
-                          fontSize: '16px'
-                        }}
-                        onMouseEnter={(e: React.MouseEvent<HTMLDivElement>) => { e.currentTarget.style.backgroundColor = '#D0E7BD'; }}
-                        onMouseLeave={(e: React.MouseEvent<HTMLDivElement>) => { e.currentTarget.style.backgroundColor = 'white'; }}
-                        onClick={() => handleSelectOption('statusPembayaran', option)}
-                      >
-                        {option}
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
 
             {/* Submit Button */}
             <div className="flex justify-center" style={{marginTop: '91px'}}>
